@@ -71,3 +71,19 @@ bash
 # Check if packages are visible to sudo
 
 sudo python3 -c "import psutil, pandas; print('Packages available')"
+
+
+# Run sudo without password
+
+From the sudoers manual:
+
+When multiple entries match for a user, they are applied in order. Where there are multiple matches, the last match is used (which is not necessarily the most specific match).
+
+If you want that username does not enter the password each time he does a sudo and he is already a member of sudo, the entry in sudoers must be after the %sudo entry.
+
+Correct
+# Allow members of group sudo to execute any command
+%sudo     ALL=(ALL:ALL) ALL
+username  ALL=(ALL) NOPASSWD: ALL
+
+
