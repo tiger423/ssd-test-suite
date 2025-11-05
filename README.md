@@ -82,8 +82,12 @@ When multiple entries match for a user, they are applied in order. Where there a
 If you want that username does not enter the password each time he does a sudo and he is already a member of sudo, the entry in sudoers must be after the %sudo entry.
 
 Correct
+
 # Allow members of group sudo to execute any command
+
 %sudo     ALL=(ALL:ALL) ALL
+
 username  ALL=(ALL) NOPASSWD: ALL
+
 
 
